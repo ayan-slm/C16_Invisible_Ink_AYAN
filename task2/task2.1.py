@@ -6,8 +6,12 @@ with open("testfile.txt","r+") as txt:
 
 
 #Image
-from PIL import Image
-im = Image.open("image1.jpg")
-print(f"Format: {im.format}")
-print(f"Mode: {im.mode}")
-print(f"Size: {im.size}")
+try:
+    from PIL import Image
+    im = Image.open("image1.jpg")
+    print(f"Format: {im.format}")
+    print(f"Mode: {im.mode}")
+    print(f"Size: {im.size}")
+
+except FileNotFoundError:
+    print("Error: File not found!")
